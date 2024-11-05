@@ -1,36 +1,48 @@
-# import streamlit as st
-# import requests
+import streamlit as st
+import requests
 
-# # Styling for a kid-friendly and immersive experience
+# # Set page configuration
 # st.set_page_config(page_title="Gamerize Learning App", layout="centered")
+
+# # Add custom CSS for background and styling
 # st.markdown("""
 #     <style>
+#     body {
+#         background-image: url('https://example.com/your-background-image.jpg'); /* Replace with your image URL */
+#         background-size: cover;
+#         background-repeat: no-repeat;
+#         background-attachment: fixed;
+#     }
 #     .main {
-#         background-color: #f0f8ff;
+#         background-color: rgba(240, 248, 255, 0.8); /* Slightly transparent white for contrast */
 #         padding: 2rem;
 #         border-radius: 1rem;
-#         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+#         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 #     }
 #     h1 {
-#         color: #ff6347;
+#         color: #ff6347; /* Tomato color */
 #         font-family: 'Comic Sans MS', cursive;
 #         text-align: center;
 #     }
+#     h2, h3 {
+#         color: #ff4500; /* OrangeRed color */
+#         font-family: 'Comic Sans MS', cursive;
+#     }
 #     .stTextInput > div > input {
-#         background-color: #fff8dc;
-#         border: 2px solid #ff6347;
+#         background-color: #fff8dc; /* Cornsilk */
+#         border: 2px solid #ff6347; /* Tomato */
 #         border-radius: 0.5rem;
 #         padding: 0.5rem;
 #     }
 #     .stButton > button {
-#         background-color: #ff6347;
+#         background-color: #ff6347; /* Tomato */
 #         color: white;
-#         border: None;
+#         border: none;
 #         font-weight: bold;
 #         font-size: 1.2rem;
 #         padding: 0.75rem 1.5rem;
 #         border-radius: 1rem;
-#         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+#         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 #     }
 #     </style>
 # """, unsafe_allow_html=True)
@@ -78,29 +90,31 @@
                 
 #                 # Display the response in a more visually appealing way
 #                 st.subheader("Response from API:")
+#                 st.markdown("<div style='padding: 10px; border-radius: 5px; background-color: rgba(255, 255, 255, 0.9);'>", unsafe_allow_html=True)
 #                 st.json(response_data)  # This will format the JSON nicely
-                
-#                 # Alternatively, display individual components with more styling
-#                 st.markdown("### Evaluation Results")
+#                 st.markdown("</div>", unsafe_allow_html=True)
+
+#                 # Detailed presentation of the response
+#                 st.markdown("### Evaluation Results", unsafe_allow_html=True)
 #                 st.markdown(f"**Correctness:** {response_data['sample_responses']['Correctness']}")
 #                 st.markdown(f"**Semantic Match:** {response_data['sample_responses']['Semantic Match']}")
 #                 st.markdown(f"**Syntactic Structure:** {response_data['sample_responses']['Syntactic Structure']}")
 #                 st.markdown(f"**Pragmatic Fit:** {response_data['sample_responses']['Pragmatic Fit']}")
-                
+
 #                 # Entities Identified
 #                 st.markdown("### Entities Identified")
 #                 entities = response_data['sample_responses']['Entities Identified']
 #                 for entity, values in entities.items():
 #                     st.markdown(f"**{entity}:** {', '.join(values)}")
-                
+
 #                 # Additional evaluation details
 #                 st.markdown("### Rating and Evaluation")
 #                 st.markdown(f"**Rating:** {response_data['sample_responses']['Rating']}")
 #                 st.markdown(f"**Evaluation:** {response_data['sample_responses']['Evaluation']}")
-                
+
 #                 # Breakdown of the evaluation
-#                 breakdown = response_data['sample_responses']['Breakdown of the evaluation']
 #                 st.markdown("### Breakdown of the Evaluation")
+#                 breakdown = response_data['sample_responses']['Breakdown of the evaluation']
 #                 for criterion, explanation in breakdown.items():
 #                     st.markdown(f"**{criterion}:** {explanation}")
                 
@@ -114,54 +128,55 @@
 #     else:
 #         st.error("Please fill out all fields before submitting.")
 
-import streamlit as st
-import requests
 
-# Set page configuration
-st.set_page_config(page_title="Gamerize Learning App", layout="centered")
+# import streamlit as st
+# import requests
 
-# Add custom CSS for background and styling
-st.markdown("""
-    <style>
-    body {
-        background-image: url('https://example.com/your-background-image.jpg'); /* Replace with your image URL */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    .main {
-        background-color: rgba(240, 248, 255, 0.8); /* Slightly transparent white for contrast */
-        padding: 2rem;
-        border-radius: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    }
-    h1 {
-        color: #ff6347; /* Tomato color */
-        font-family: 'Comic Sans MS', cursive;
-        text-align: center;
-    }
-    h2, h3 {
-        color: #ff4500; /* OrangeRed color */
-        font-family: 'Comic Sans MS', cursive;
-    }
-    .stTextInput > div > input {
-        background-color: #fff8dc; /* Cornsilk */
-        border: 2px solid #ff6347; /* Tomato */
-        border-radius: 0.5rem;
-        padding: 0.5rem;
-    }
-    .stButton > button {
-        background-color: #ff6347; /* Tomato */
-        color: white;
-        border: none;
-        font-weight: bold;
-        font-size: 1.2rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-    </style>
-""", unsafe_allow_html=True)
+# # Set page configuration
+# st.set_page_config(page_title="Gamerize Learning App", layout="centered")
+
+# # Add custom CSS for background and styling
+# st.markdown("""
+#     <style>
+#     body {
+#         background-image: url('https://images.unsplash.com/photo-1555063170-2269a161e4e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDd8fGtpZCUyMGxpbmV8ZW58MHx8fHwxNjcwMTUyNDA2&ixlib=rb-1.2.1&q=80&w=1080'); /* Kid-friendly colorful image */
+#         background-size: cover;
+#         background-repeat: no-repeat;
+#         background-attachment: fixed;
+#     }
+#     .main {
+#         background-color: rgba(240, 248, 255, 0.9); /* Slightly transparent white for contrast */
+#         padding: 2rem;
+#         border-radius: 1rem;
+#         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+#     }
+#     h1 {
+#         color: #ff6347; /* Tomato color */
+#         font-family: 'Comic Sans MS', cursive;
+#         text-align: center;
+#     }
+#     h2, h3 {
+#         color: #ff4500; /* OrangeRed color */
+#         font-family: 'Comic Sans MS', cursive;
+#     }
+#     .stTextInput > div > input {
+#         background-color: #fff8dc; /* Cornsilk */
+#         border: 2px solid #ff6347; /* Tomato */
+#         border-radius: 0.5rem;
+#         padding: 0.5rem;
+#     }
+#     .stButton > button {
+#         background-color: #ff6347; /* Tomato */
+#         color: white;
+#         border: none;
+#         font-weight: bold;
+#         font-size: 1.2rem;
+#         padding: 0.75rem 1.5rem;
+#         border-radius: 1rem;
+#         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+#     }
+#     </style>
+# """, unsafe_allow_html=True)
 
 # App title
 st.title("🧩 Gamerize Learning POC")
