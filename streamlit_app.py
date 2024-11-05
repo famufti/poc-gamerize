@@ -57,7 +57,7 @@ actual_answer = st.text_input("Enter the actual answer:")
 # Submit button
 if st.button("Submit"):
     # Check that mandatory fields are filled
-    if question and st.session_state.expected_answers and actual_answer:
+    if question and actual_answer:
         # Capture all variables
         data = {
             "question": question,
