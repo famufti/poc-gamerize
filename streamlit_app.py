@@ -41,6 +41,10 @@ st.title("🧩 Gamerize Learning POC")
 if "expected_answers" not in st.session_state:
     st.session_state.expected_answers = []
 
+# Initialize session state for the new answer field
+if "new_answer" not in st.session_state:
+    st.session_state.new_answer = ""
+
 # Input fields
 question = st.text_input("Enter your question here:")
 
