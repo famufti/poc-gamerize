@@ -86,14 +86,10 @@ if st.button("Submit"):
                 correctness = response_data['sample_responses']['Correctness']
                 
                 # Create columns for layout
-                col1, col2 = st.columns([1, 1])  # Adjust the column widths as needed
+                col1, col2 = st.columns([2, 3])  # Adjust the column widths as needed
                 
                 with col1:
-                    # You can show additional information here if needed
-                    st.markdown("")  # Empty space for alignment
-                
-                with col2:
-                    # Display correctness message
+                    # Display correctness message prominently on the left side
                     if correctness == "Correct":
                         st.markdown(f"<div style='padding: 10px; border-radius: 5px; background-color: #d4edda; color: #155724; font-weight: bold; text-align: center;'>**Correct**</div>", unsafe_allow_html=True)
                     elif correctness == "Incorrect":
@@ -101,6 +97,10 @@ if st.button("Submit"):
                     elif correctness == "Somewhat Correct":
                         st.markdown(f"<div style='padding: 10px; border-radius: 5px; background-color: #fff3cd; color: #856404; font-weight: bold; text-align: center;'>**Somewhat Correct**</div>", unsafe_allow_html=True)
 
+                with col2:
+                    # Placeholder for any additional content you may want
+                    st.markdown("")  # This can be left empty or used for other content
+                
                 
                 # Display the response in a more visually appealing way
                 st.subheader("Response from API:")
