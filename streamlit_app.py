@@ -1,10 +1,3 @@
-# import streamlit as st
-
-# st.title("🎈 My new app")
-# st.write(
-#     "Let's start building app for Hassaan Mahboob.Hello G For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-# )
-
 import streamlit as st
 
 # Styling for a kid-friendly and immersive experience
@@ -44,21 +37,25 @@ st.markdown("""
 # App title
 st.title("🧩 Gamerize Learning POC")
 
+# Initialize session state for expected answers
+if "expected_answers" not in st.session_state:
+    st.session_state.expected_answers = []
+
 # Input fields
 question = st.text_input("Enter your question here:")
 
 # Expected answers section with dynamic inputs
 st.subheader("Expected Answers")
-expected_answers = []
-new_answer = st.text_input("Add an expected answer")
+new_answer = st.text_input("Add an expected answer", key="new_answer")
 
 # Button to add expected answers to the list
 if st.button("➕ Add Expected Answer"):
-    expected_answers.append(new_answer)
-    st.experimental_rerun()
+    if new_answer:  # Ensure new_answer is not empty
+        st.session_state.expected_answers.append(new_answer)
+        st.session_state.new_answer = ""  # Clear the input field
 
 # Display added answers
-for i, ans in enumerate(expected_answers):
+for i, ans in enumerate(st.session_state.expected_answers):
     st.write(f"{i+1}. {ans}")
 
 # Actual answer input
@@ -67,11 +64,11 @@ actual_answer = st.text_input("Enter the actual answer:")
 # Submit button
 if st.button("Submit"):
     # Check that mandatory fields are filled
-    if question and expected_answers and actual_answer:
+    if question and st.session_state.expected_answers and actual_answer:
         # Capture all variables
         data = {
             "question": question,
-            "expected_answers": expected_answers,
+            "expected_answers": st.session_state.expected_answers,
             "actual_answer": actual_answer
         }
         st.success("Data submitted successfully!")
