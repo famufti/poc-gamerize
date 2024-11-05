@@ -61,7 +61,6 @@ if st.button("Submit"):
         # Capture all variables
         data = {
             "question": question,
-            "expected_answers": st.session_state.expected_answers,
             "actual_answer": actual_answer
         }
         st.success("Data submitted successfully!")
