@@ -7,12 +7,6 @@ st.set_page_config(page_title="Gamerize Learning App", layout="centered")
 # Add custom CSS for background and styling
 st.markdown("""
     <style>
-    body {
-        background-image: url('https://images.unsplash.com/photo-1555063170-2269a161e4e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDd8fGtpZCUyMGxpbmV8ZW58MHx8fHwxNjcwMTUyNDA2&ixlib=rb-1.2.1&q=80&w=1080'); /* Kid-friendly colorful image */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
     .main {
         background-color: rgba(240, 248, 255, 0.8); /* Slightly transparent white for contrast */
         padding: 2rem;
@@ -31,7 +25,6 @@ st.markdown("""
         padding: 0.5rem;
     }
     .stButton > button {
-        background-color: #ff6347; /* Tomato color for the button */
         color: white;
         border: none;
         font-weight: bold;
