@@ -80,7 +80,7 @@ if st.button("Submit"):
             response_data = response.json()
             
             if response.status_code == 200:
-                st.success("Data submitted successfully!")
+                # st.success("Data submitted successfully!")
                 
                 # Display the correctness prominently next to the submit button
                 correctness = response_data['sample_responses']['Correctness']
