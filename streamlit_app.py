@@ -8,7 +8,7 @@ st.set_page_config(page_title="Gamerize Learning App", layout="centered")
 st.markdown("""
     <style>
     body {
-        background-image: url('https://example.com/your-background-image.jpg'); /* Replace with your image URL */
+        background-image: url('https://images.unsplash.com/photo-1555063170-2269a161e4e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDd8fGtpZCUyMGxpbmV8ZW58MHx8fHwxNjcwMTUyNDA2&ixlib=rb-1.2.1&q=80&w=1080'); /* Kid-friendly colorful image */
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -20,26 +20,21 @@ st.markdown("""
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     }
     h1 {
-        color: #ff6347; /* Tomato color */
-        font-family: 'Comic Sans MS', cursive;
         text-align: center;
     }
     h2, h3 {
-        color: #ff4500; /* OrangeRed color */
-        font-family: 'Comic Sans MS', cursive;
+        text-align: left;
     }
     .stTextInput > div > input {
-        background-color: #fff8dc; /* Cornsilk */
-        border: 2px solid #ff6347; /* Tomato */
+        border: 2px solid #ccc; /* Light gray */
         border-radius: 0.5rem;
         padding: 0.5rem;
     }
     .stButton > button {
-        background-color: #ff6347; /* Tomato */
+        background-color: #007bff; /* Blue color */
         color: white;
         border: none;
         font-weight: bold;
-        font-size: 1.2rem;
         padding: 0.75rem 1.5rem;
         border-radius: 1rem;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
