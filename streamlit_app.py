@@ -31,7 +31,7 @@ st.markdown("""
         padding: 0.5rem;
     }
     .stButton > button {
-        background-color: #007bff; /* Blue color */
+        background-color: #ff6347; /* Tomato color for the button */
         color: white;
         border: none;
         font-weight: bold;
