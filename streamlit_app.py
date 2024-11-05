@@ -26,7 +26,7 @@ st.markdown("""
     }
     .stButton > button {
         color: white;
-        border: none;
+        border: 2px solid #ff4500; /* OrangeRed border */
         font-weight: bold;
         padding: 0.75rem 1.5rem;
         border-radius: 1rem;
