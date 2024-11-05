@@ -86,7 +86,7 @@ if st.button("Submit"):
                 correctness = response_data['sample_responses']['Correctness']
                 
                 # Create columns for layout
-                col1, col2 = st.columns([3, 1])  # Adjust the column widths as needed
+                col1, col2 = st.columns([3, 0])  # Adjust the column widths as needed
                 
                 with col1:
                     # You can show additional information here if needed
