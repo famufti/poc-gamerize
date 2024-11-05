@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-
+import pandas as pd
 # Set page configuration
 st.set_page_config(page_title="Gamerize Learning App", layout="centered")
 
@@ -38,6 +38,15 @@ st.markdown("""
 # App title
 st.title("🧩 Gamerize Learning POC")
 
+# Load questions from the CSV file
+@st.cache_data
+def load_questions():
+    # Replace 'your_questions.csv' with your actual CSV file path
+    df = pd.read_csv('questions.csv')
+    return df['question'].tolist()
+
+questions = load_questions()
+
 # Initialize session state for expected answers
 if "expected_answers" not in st.session_state:
     st.session_state.expected_answers = []
@@ -46,11 +55,11 @@ if "expected_answers" not in st.session_state:
 if "new_answer" not in st.session_state:
     st.session_state.new_answer = ""
 
-# Input fields
-Question = st.text_input("Enter your question here:")
+# Question selection
+Question = st.selectbox("Select a question:", questions)
 
 # Expected answers section with dynamic inputs
-st.subheader("Expected Answers")
+st.subheader("Expected Answer")
 
 # Actual answer input
 Answer = st.text_input("Enter the actual answer:")
