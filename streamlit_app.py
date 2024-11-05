@@ -50,13 +50,14 @@ question = st.text_input("Enter your question here:")
 
 # Expected answers section with dynamic inputs
 st.subheader("Expected Answers")
-new_answer = st.text_input("Add an expected answer", key="new_answer")
+new_answer = st.text_input("Add an expected answer", value=st.session_state.new_answer, key="new_answer")
 
 # Button to add expected answers to the list
 if st.button("➕ Add Expected Answer"):
     if new_answer:  # Ensure new_answer is not empty
         st.session_state.expected_answers.append(new_answer)
-        st.session_state.new_answer = ""  # Clear the input field
+        # Clear the new_answer field indirectly by setting session state through a temporary variable
+        st.session_state.new_answer = ""  # Reset for the next input
 
 # Display added answers
 for i, ans in enumerate(st.session_state.expected_answers):
