@@ -37,7 +37,9 @@ st.markdown("""
 
 # App title
 st.title("🧩 Gamerize Learning POC")
-st.write("This POC allows users to answer open-ended questions from a mini game in a kids app, and get their answers evaluated as correct, incorrect or somewhat correct using a simple system using large language models. The app uses AWS services like Bedrock, Lambda and tries to use sentence similarity concepts like semantic similarity, pragmatic similarity etc. Simply pick a question from the dropdown and type an answer for it to evaluate its correctness and also give a detailed analysis for different types of sentence similarities.")
+st.write("This POC allows users to answer open-ended questions from a mini game in a kids app, and get their answers evaluated as correct, incorrect or somewhat correct using a simple system using large language models. The app uses AWS services like Bedrock, Lambda and tries to use sentence similarity concepts like semantic similarity, pragmatic similarity etc.")
+
+st.write("Simply pick a question from the dropdown and type an answer for it to evaluate its correctness and also give a detailed analysis for different types of sentence similarities.")
 # Load questions from the CSV file
 @st.cache_data
 def load_questions():
