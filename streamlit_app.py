@@ -37,7 +37,7 @@ st.markdown("""
 
 # App title
 st.title("🧩 Gamerize Learning POC")
-
+st.write("POC details placholder")
 # Load questions from the CSV file
 @st.cache_data
 def load_questions():
