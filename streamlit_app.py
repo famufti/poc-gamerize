@@ -74,7 +74,7 @@ if st.button("Submit"):
         }
         
         # API endpoint
-        api_url = "https://9qrchwwpqa.execute-api.us-west-2.amazonaws.com/dev/text-to-text-api"
+        api_url = st.secrets["api_gateway_endpoint"]
         
         # Send data to the API endpoint
         try:
